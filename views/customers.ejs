@@ -1,0 +1,32 @@
+<% layout('./layouts/layouts') %>
+    <style>
+        @media screen and (min-width: 900px) {
+            .container {
+                width: 50%;
+            }
+        }
+    </style>
+    <div class="container ">
+        <% for(let c of customer) {%>
+            <div class="card mb-3">
+                <div class="row" style="background-color: #d0a8e9;">
+                    <div class="col-lg-4 col-md-6">
+                        <img src="<%= c.avatar %>" class="card-img-top rounded-circle" alt="...">
+                    </div>
+                    <div class="col-md-6 col-lg-8">
+                        <div class="card-body pb-1 pb-sm-0">
+                            <h5 class=" card-title" style="text-transform: capitalize;">
+                                <b><%= c.username %></b>
+                            </h5>
+                            <p class="card-text">
+                                <%= c.about %>
+                            </p>
+                            <a class="btn btn-primary btn-m" href="/customer/<%= c._id %>">Details..</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <% } %>
+    </div>
